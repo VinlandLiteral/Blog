@@ -1,7 +1,7 @@
-class ArticleController < ApplicationController
+class ArticlesController < ApplicationController
 
   def index
-    @article = Article.all
+    @articles = Article.all
   end
 
   def show
@@ -30,7 +30,7 @@ class ArticleController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to root_path
+      redirect_to @article 
     else 
       render 'new'
     end

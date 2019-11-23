@@ -1,5 +1,13 @@
-<% @article do |f| %>
-  <%= f.input :title %>
-  <%= f.input :text %>
-  <% f.submit "Create" %>
+<%= form_with scope: :article, url: articles_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %>
+    <br />
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :text %>
+    <br />
+    <%= form.text_field :text %>
+  </p>
+  <%= form.submit "Create" %>
 <% end %>
